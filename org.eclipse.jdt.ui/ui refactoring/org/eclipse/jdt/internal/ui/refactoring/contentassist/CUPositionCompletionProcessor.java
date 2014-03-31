@@ -10,6 +10,7 @@
  *
  * Contributors:
  *     IBM Corporation - initial API and implementation
+ *     Timo Kinnunen <timo.kinnunen@gmail.com> - [content assist] Allow to configure auto insertion trigger characters - https://bugs.eclipse.org/bugs/show_bug.cgi?id=348857
  *******************************************************************************/
 package org.eclipse.jdt.internal.ui.refactoring.contentassist;
 
@@ -236,7 +237,7 @@ public class CUPositionCompletionProcessor implements IContentAssistProcessor, I
 				int start, int end, int relevance, ImageDescriptor descriptor) {
 			JavaCompletionProposal javaCompletionProposal= new JavaCompletionProposal(completion, start - fOffsetReduction, end - start,
 					getImage(descriptor), new StyledString(name), relevance);
-			javaCompletionProposal.setTriggerCharacters(TRIGGER_CHARACTERS);
+			javaCompletionProposal.setTriggerCharacters(JavaPlugin.getActiveCodeAssistAutoCompletionTriggerCharacters(TRIGGER_CHARACTERS));
 			fProposals.add(javaCompletionProposal);
 		}
 
@@ -254,7 +255,7 @@ public class CUPositionCompletionProcessor implements IContentAssistProcessor, I
 					new StyledString(name),
 					relevance,
 					fullyQualifiedName);
-			javaCompletionProposal.setTriggerCharacters(TRIGGER_CHARACTERS);
+			javaCompletionProposal.setTriggerCharacters(JavaPlugin.getActiveCodeAssistAutoCompletionTriggerCharacters(TRIGGER_CHARACTERS));
 			fProposals.add(javaCompletionProposal);
 		}
 

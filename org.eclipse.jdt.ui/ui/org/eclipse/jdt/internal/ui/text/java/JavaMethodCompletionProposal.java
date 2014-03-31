@@ -11,6 +11,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *     Tom Eicher <eclipse@tom.eicher.name> - [content assist] prefix complete casted method proposals - https://bugs.eclipse.org/bugs/show_bug.cgi?id=247547
+ *     Timo Kinnunen <timo.kinnunen@gmail.com> - [content assist] Allow to configure auto insertion trigger characters - https://bugs.eclipse.org/bugs/show_bug.cgi?id=348857
  *******************************************************************************/
 package org.eclipse.jdt.internal.ui.text.java;
 
@@ -110,10 +111,10 @@ public class JavaMethodCompletionProposal extends LazyJavaCompletionProposal {
 	@Override
 	protected char[] computeTriggerCharacters() {
 		if (fProposal.getKind() == CompletionProposal.METHOD_NAME_REFERENCE)
-			return METHOD_NAME_TRIGGERS;
+			return JavaPlugin.getActiveCodeAssistAutoCompletionTriggerCharacters(METHOD_NAME_TRIGGERS);
 		if (hasParameters())
-			return METHOD_WITH_ARGUMENTS_TRIGGERS;
-		return METHOD_TRIGGERS;
+			return JavaPlugin.getActiveCodeAssistAutoCompletionTriggerCharacters(METHOD_WITH_ARGUMENTS_TRIGGERS);
+		return JavaPlugin.getActiveCodeAssistAutoCompletionTriggerCharacters(METHOD_TRIGGERS);
 	}
 
 	/**

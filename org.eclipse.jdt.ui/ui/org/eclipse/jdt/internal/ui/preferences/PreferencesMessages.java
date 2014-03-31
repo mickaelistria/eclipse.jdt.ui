@@ -20,6 +20,7 @@
  *     				Warning option for bug 410218 - https://bugs.eclipse.org/461999
  *     Gábor Kövesdán - Contribution for Bug 350000 - [content assist] Include non-prefix matches in auto-complete suggestions
  *     Jesper S Møller - Contributions for bug 529432 - Allow JDT UI to target Java 10
+ *     Timo Kinnunen <timo.kinnunen@gmail.com> - [content assist] Allow to configure auto insertion trigger characters - https://bugs.eclipse.org/bugs/show_bug.cgi?id=348857
  *******************************************************************************/
 package org.eclipse.jdt.internal.ui.preferences;
 
@@ -171,6 +172,7 @@ public final class PreferencesMessages extends NLS {
 	public static String JavaEditorPreferencePage_presentProposalsInAlphabeticalOrder;
 	public static String JavaEditorPreferencePage_coloring_element;
 	public static String JavaEditorPreferencePage_enableAutoActivation;
+	public static String JavaEditorPreferencePage_enableAutoCompletion;
 	public static String JavaEditorPreferencePage_automaticallyAddImportInsteadOfQualifiedName;
 	public static String JavaEditorPreferencePage_suggestStaticImports;
 	public static String JavaEditorPreferencePage_completionInserts;
@@ -182,6 +184,9 @@ public final class PreferencesMessages extends NLS {
 	public static String JavaEditorPreferencePage_autoActivationDelay;
 	public static String JavaEditorPreferencePage_autoActivationTriggersForJava;
 	public static String JavaEditorPreferencePage_autoActivationTriggersForJavaDoc;
+	public static String JavaEditorPreferencePage_autoCompletionTriggers;
+	public static String JavaEditorPreferencePage_autoCompletionTriggersInsert;
+	public static String JavaEditorPreferencePage_autoCompletionTriggersReset;
 	public static String JavaEditorPreferencePage_completePrefixes;
 	public static String JavaEditorPreferencePage_backgroundForMethodParameters;
 	public static String JavaEditorPreferencePage_foregroundForMethodParameters;
